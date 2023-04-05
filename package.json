@@ -1,14 +1,22 @@
 {
   "name": "trai1",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Harishkumar",
+    "email": "harishkumarreddy.cherla@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "tarinig project"
+  ],
+  "private": true,
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
