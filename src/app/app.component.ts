@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-app';
+  title = 'Training';
+  message = 'Hello World';
+  myname = 'Harish';
+
+  changeHandle(e:any){
+    console.log(e);
+    this.message = e.target.value;
+  }
 }

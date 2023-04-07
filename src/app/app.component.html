@@ -1,7 +1,29 @@
-<H1>{{title}}</H1>
-<hr>
-<app-first></app-first>
-<app-first></app-first>
-<app-first></app-first>
-<hr>
-<app-secound></app-secound>
+<mat-toolbar color="primary">
+    <button mat-icon-button class="menu-btn" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{title | uppercase}}</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="notification-btn favorite-icon try-btn" aria-label="icon-button with heart icon">
+        <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button class="user-btn try-btn" aria-label="icon-button with share icon">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+</mat-toolbar>
+
+<br /><br /><br />
+<div>
+    <!-- event binding example with textbox -->
+    <input type="text" [value]="message" (change)="changeHandle($event)" />
+    <div>
+        {{message}}
+    </div>
+<hr />
+    <!-- two way binding example with textbox -->
+    <input type="text" [(ngModel)]="myname" />
+    <div>
+        {{myname}}
+    </div>
+
+</div>

@@ -1,3 +1,36 @@
-*{
+* {
     text-align: center;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.try-btn{
+    margin: 0px 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fafafa;
+    background-color: transparent;
+    color: #fafafa;
+}
+
+.try-btn:hover{
+    background-color: #fafafa;
+    color: #000;
+    cursor: pointer;
+}
+.menu-btn{
+    margin: 0px 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    color: #fafafa;
+}
+.menu-btn:hover{
+    background-color: #fafafa1d;
+    cursor: pointer;
+    border-radius: 10px;
 }

@@ -53,6 +53,13 @@ EX:
 1. Modules
 2. Components and Templates
 3. Data binding
+    1. uni-directional data flow
+        a. class to view -> Data binding {{variable}}
+        b. view to class -> Event binding (click)="function(e)"
+    2. bi-directional data flow(MVVM) -> 2 way data binding [(ngModel)]="variable"
+3A. Property binding -> [property]="variable"
+3B. Event binding -> (event)="function(e)"
+3C. input & output binding -> @Input() @Output()
 4. Directives
 5. Pipes/filters
 6. Forms
