@@ -1,0 +1,24 @@
+<!-- Real message -->
+<!-- <div *ngIf="!hasError">
+    {{realMessage}}
+</div>
+
+<!-- Errormessage -->
+<!-- <div *ngIf="hasError"> 
+    {{errMessage}}
+</div> -->
+
+<!--  ng if else -->
+<div *ngIf="hasError then successContainer else errContainer"></div>
+<ng-template #successContainer>
+    {{realMessage}}
+</ng-template>
+
+<!-- Errormessage -->
+<ng-template #errContainer>
+    {{errMessage}}
+</ng-template>
+
+<div>
+    <button (click)="toggleError()">Toggle Error</button>
+</div>

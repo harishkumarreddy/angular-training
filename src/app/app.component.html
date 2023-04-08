@@ -13,17 +13,35 @@
 </mat-toolbar>
 
 <br /><br /><br />
-<div>
+<!-- <div> -->
     <!-- event binding example with textbox -->
-    <input type="text" [value]="message" (change)="changeHandle($event)" />
+    <!-- <input type="text" [value]="message" (change)="changeHandle($event)" />
+    <div>
+        {{message.length}} <br>
+        {{1+1}}<br>
+        {{(10%2 == 0) ? 'even' : 'odd' }}<br>
+    </div>
     <div>
         {{message}}
     </div>
-<hr />
+<hr /> -->
     <!-- two way binding example with textbox -->
-    <input type="text" [(ngModel)]="myname" />
+    <!-- <input type="text" [(ngModel)]="myname" />
     <div>
         {{myname}}
-    </div>
+    </div> 
 
 </div>
+
+<hr />
+<h1>Exhange between components</h1>
+<div>
+    messaget to child: 
+    <input type="text" [(ngModel)]="parentMessage" />
+    <app-first [message]="parentMessage" (result)="captureResult($event)"></app-first>
+    <div>
+        Message from Chaild: {{result}}
+    </div>
+</div> -->
+
+<app-ifelse></app-ifelse>

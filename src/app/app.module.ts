@@ -9,12 +9,14 @@ import { SecoundComponent } from './components/secound/secound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { IfelseComponent } from './components/ifelse/ifelse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecoundComponent
+    SecoundComponent,
+    IfelseComponent
   ],
   imports: [
     BrowserModule,

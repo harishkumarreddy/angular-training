@@ -60,7 +60,12 @@ EX:
 3A. Property binding -> [property]="variable"
 3B. Event binding -> (event)="function(e)"
 3C. input & output binding -> @Input() @Output()
+    1. input -> @Input() variable: type -> parent to child data flow
+    2. output -> @Output() variable: EventEmitter<type> -> child to parent data flow
 4. Directives
+    1. Structural directives -> *ngIf, *ngFor
+    2. Attribute directives -> [ngClass], [ngStyle]
+    3. Component directives -> <app-component></app-component>
 5. Pipes/filters
 6. Forms
 7. Services

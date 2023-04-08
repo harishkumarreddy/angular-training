@@ -9,9 +9,16 @@ export class AppComponent {
   title = 'Training';
   message = 'Hello World';
   myname = 'Harish';
+  parentMessage = 'message from parent';
+  result:string = '';
 
   changeHandle(e:any){
     console.log(e);
     this.message = e.target.value;
   }
+
+  captureResult(e:any){
+    this.result = e;
+  }
+  
 }
