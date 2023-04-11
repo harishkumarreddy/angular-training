@@ -1,0 +1,37 @@
+<div>
+<!-- statrt and end date pickers -->
+<H1>Dates example:</H1>
+<div class="row date-container">
+    <div class="col-md-6">
+        <mat-form-field>
+            <input matInput 
+            [matDatepicker]="startPicker" 
+            placeholder="Start Date" 
+            [(ngModel)]="startDate" 
+            (dateInput)="startDateChange($event)" 
+            (dateChange)="startDateChange($event)"
+            [min]="leastDate"
+            [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+            <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <mat-form-field>
+            <input matInput [matDatepicker]="endPicker" placeholder="End Date" [(ngModel)]="endDate" 
+            (dateInput)="endDateChange($event)" 
+            (dateChange)="endDateChange($event)"
+            [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+            <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+</div>
+<!-- show error message -->
+<div class="row err-msg">
+    <div class="col-md-12">
+        <div *ngIf="errMsg.length" class="error-message">
+            <mat-icon>error</mat-icon>
+            <span>{{errMsg}}</span>
+        </div>
+    </div>
