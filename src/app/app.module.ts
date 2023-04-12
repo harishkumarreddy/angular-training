@@ -57,6 +57,7 @@ import {DialogModule} from '@angular/cdk/dialog';
 
 import { IfelseComponent } from './components/ifelse/ifelse.component';
 import { DatesComponent } from './components/dates/dates.component';
+import { NgforComponent } from './components/ngfor/ngfor.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { DatesComponent } from './components/dates/dates.component';
     FirstComponent,
     SecoundComponent,
     IfelseComponent,
-    DatesComponent
+    DatesComponent,
+    NgforComponent
   ],
   imports: [
     BrowserModule,

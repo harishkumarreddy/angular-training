@@ -1,0 +1,46 @@
+<ol [ngStyle]="getStyles('inactive')">
+    <!-- generate 10 list items with simple for loop -->
+    <li *ngFor="let item of [1, 2,3,4,5,6,7,8,9,10]; let i = index">
+        {{i}} - {{item}}
+    </li>
+
+    <!-- show the list of people from names -->
+    <li *ngFor="let person of names">
+        {{person}}
+    </li>
+</ol>
+
+<hr />
+
+<div>
+    <p *ngFor="let person of names; let i = index">
+        {{i+1}}. {{person}}
+    </p>
+</div>
+
+<hr />
+<!-- render students table -->
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr *ngFor="let student of studentsArray; let i = index" [ngClass]="getClass(i)"  >
+        <td>{{i+1}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>
+            <button (click)="viewStudent(i)">
+                <mat-icon>visibility</mat-icon>
+            </button>
+            <button (click)="deleteStudent(i)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>
+<div style="height:300px" >
+    
+</div>

@@ -21,6 +21,7 @@
             <input matInput [matDatepicker]="endPicker" placeholder="End Date" [(ngModel)]="endDate" 
             (dateInput)="endDateChange($event)" 
             (dateChange)="endDateChange($event)"
+            [min]="leastDate"
             [max]="maxDate">
             <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
             <mat-datepicker #endPicker></mat-datepicker>
