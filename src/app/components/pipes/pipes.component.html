@@ -1,0 +1,41 @@
+<!-- <div>
+    {{today}} <br />
+    {{today | date: "short"}} <br />
+    {{today | date: "shortDate"}} <br />
+    {{today | date: "shortTime"}} <br />
+    {{today | date: "medium"}} <br />
+    {{today | date: "mediumDate"}} <br />
+    {{today | date: "mediumTime"}} <br />
+    {{today | date: "long"}} <br />
+    {{today | date: "longDate"}} <br />
+    {{today | date: "longTime"}} <br />
+    {{today | date: "full"}} <br />
+    {{today | date: "fullDate"}} <br />
+    {{today | date: "fullTime"}} <br />
+    {{today | date: "shortTime" : "GMT"}} <br />
+    {{today | date: "shortTime" : "GMT+5"}} <br />
+    {{today | date: "shortTime" : "GMT+5:30"}} <br />
+</div> -->
+
+<!-- use appMydirective to apply the styles -->
+<div appMydirective>
+    <h1>Custom Directive</h1>
+    <p>Custom directive is used to apply styles to the elements</p>
+<!-- <div> -->
+    Name: {{fullName | uppercase | slice: 0:11}} <br />
+    Name: {{fullName | lowercase | slice: 0:11}} <br />
+    Name: {{fullName | titlecase }} <br />
+    Name: {{fullName | mypipe }} <br />
+    Date: {{today | date: "shortDate"}} <br />
+    time: {{today | date: "shortTime"}} <br />
+    Spent Amount: {{totalCost | currency: "GBP" : "symbol" : "2.2-2"}} <br />
+    Template: <pre [ngStyle]="{
+        'background-color': 'lightgray',
+        'border': '1px solid black',
+        'padding': '5px',
+        'width': '300px',
+        'text-align': 'left',
+        'margin-left': '40%'
+    }">{{sampleJson | json}}</pre> <br />
+    Discount: {{discount | percent }} <br />
+</div>

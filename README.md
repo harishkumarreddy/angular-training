@@ -66,12 +66,26 @@ EX:
     1. Structural directives -> *ngIf, *ngFor
     2. Attribute directives -> [ngClass], [ngStyle]
     3. Component directives -> <app-component></app-component>
-5. Pipes/filters
+    4. Custom directives -> @Directive()
+5. Pipes/filters 
+    1. built-in pipes -> {{variable | pipe}}
+        a. date -> {{variable | date: 'short'}}, {{variable | date: 'shortDate'}}, {{variable | date: 'shortTime'}}, {{variable | date: 'medium'}}, {{variable | date: 'mediumDate'}}, {{variable | date: 'mediumTime'}}, {{variable | date: 'long'}}, {{variable | date: 'longDate'}}, {{variable | date: 'longTime'}}
+        b. currency -> {{variable | currency: 'USD': 'symbol'}}
+        c. number -> {{variable | number: '1.2-2'}}
+        d. json -> {{variable | json}}
+        e. slice -> {{variable | slice: 0: 2}}
+        f. uppercase -> {{variable | uppercase}}
+        g. lowercase -> {{variable | lowercase}}
+        h. titlecase -> {{variable | titlecase}}
+        i. percent -> {{variable | percent}}
+        j. decimal -> {{variable | decimal}}
+        k. async -> {{variable | async}}
+    2. custom pipes -> {{variable | customPipe}}
 6. Forms
 7. Services
 8. Dependency Injection
-9. Routing
-10. Http/ API intigration
+9. Http/ API intigration
+10. Routing
 11. RXJS
 12. Testing
 13. Interfaces

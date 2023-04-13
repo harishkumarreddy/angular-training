@@ -58,6 +58,9 @@ import {DialogModule} from '@angular/cdk/dialog';
 import { IfelseComponent } from './components/ifelse/ifelse.component';
 import { DatesComponent } from './components/dates/dates.component';
 import { NgforComponent } from './components/ngfor/ngfor.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { MypipePipe } from './custome/mypipe.pipe';
+import { MydirectiveDirective } from './custome/mydirective.directive';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { NgforComponent } from './components/ngfor/ngfor.component';
     SecoundComponent,
     IfelseComponent,
     DatesComponent,
-    NgforComponent
+    NgforComponent,
+    PipesComponent,
+    MypipePipe,
+    MydirectiveDirective
   ],
   imports: [
     BrowserModule,
