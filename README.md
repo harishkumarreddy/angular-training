@@ -16,6 +16,7 @@ EX:
 1.0.0 -> 1.0.1 -> 1.0.2 -> ...
 
 # Angular symantic structure:
+```
 |-project
 |---src
 |-----app
@@ -43,7 +44,14 @@ EX:
 |-----------custom directives
 |---------Forms
 |-----------custom forms
+```
 
+## Pre-requisites: (* is required)
+1. Javascript*
+2. HTML*
+3. CSS*
+4. Typescript
+5. NodeJS
 
 # Bulding Blocks:
 0. Script 
@@ -82,6 +90,14 @@ EX:
         k. async -> {{variable | async}}
     2. custom pipes -> {{variable | customPipe}}
 6. Forms
+    1. Template / model driven forms
+        ex: <form> 
+        <input type="text" [(ngModel)]="variable"> 
+        </form>
+    2. Reactive forms
+        ex: <form [formGroup]="formGroup"> 
+        <input type="text" formControlName="variable"> 
+        </form>
 7. Services
 8. Dependency Injection
 9. Http/ API intigration

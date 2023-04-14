@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,6 +61,7 @@ import { NgforComponent } from './components/ngfor/ngfor.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { MypipePipe } from './custome/mypipe.pipe';
 import { MydirectiveDirective } from './custome/mydirective.directive';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { MydirectiveDirective } from './custome/mydirective.directive';
     NgforComponent,
     PipesComponent,
     MypipePipe,
-    MydirectiveDirective
+    MydirectiveDirective,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -127,6 +129,7 @@ import { MydirectiveDirective } from './custome/mydirective.directive';
     PortalModule,
     ScrollingModule,
     DialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
