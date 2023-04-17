@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -14,35 +14,37 @@ export class FormComponent {
     isAdmin: false
   }
 
-  userForm: FormGroup;
-  users:any = new FormArray([]);
+  // userForm: FormGroup;
+  usersFormArray = this.fb.group({
+    users: this.fb.array([])
+  });
 
-  constructor() { 
-    // generete a userform
-    this.userForm = new FormGroup({
-      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-      isAdmin: new FormControl(false, [])
-    });
+  constructor(private fb: FormBuilder) { 
+    this.addUser();
+  }
+  get users(): FormArray {
+    return this.usersFormArray.get('users') as FormArray;
   }
 
-  formSubmit(e:any) {
+  formSubmit(e: any) {
     console.log(e);
     console.log(this.user);
   }
 
-  formSubmit2(e:any) {
+  formSubmit2(e: any) {
     console.log(e);
     console.log(this.users);
   }
 
   addUser() {
-    this.users.push(new FormGroup({
-      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-      isAdmin: new FormControl(false, [])
-    }));
+    const user = this.fb.group({
+      name: [null, Validators.required],
+      email: [null, Validators.required],
+      password: [null, Validators.required],
+      isAdmin: [false]
+    })
+    this.users.push( user );
+
+    console.log(this.users)
   }
 }

@@ -1,50 +1,53 @@
 <!-- treditional plain HTML registration form -->
-<form (submit)="formSubmit($event)">
+<!-- <form (submit)="formSubmit($event)">
     <div>
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required [(ngModel)]="user.name"/>
+        <input type="text" id="name" name="name" required [(ngModel)]="user.name" />
     </div>
     <div>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required [(ngModel)]="user.email"/>
+        <input type="email" id="email" name="email" required [(ngModel)]="user.email" />
     </div>
     <div>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required [(ngModel)]="user.password"/>
+        <input type="password" id="password" name="password" required [(ngModel)]="user.password" />
     </div>
     <div>
         <label for="isAdmin">Is Admin</label>
-        <input type="checkbox" id="isAdmin" name="isadmin" required [(ngModel)]="user.isAdmin"/>
+        <input type="checkbox" id="isAdmin" name="isadmin" required [(ngModel)]="user.isAdmin" />
     </div>
     <input type="submit" value="Submit" />
-</form>
+</form> -->
 
 <hr />
-<!-- material forms with form array -->
-<form [formGroup]="userForm" (ngSubmit)="formSubmit2($event)">
-    <div formArrayName="users">
-        <div *ngFor="let user of users; let i=index">
-            <pre>
-                {{user | json}}
-            </pre>
-            <!-- <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" formControlName="name" />
+
+<form [formGroup]="usersFormArray" (ngSubmit)="formSubmit2($event)">
+    <ng-container formArrayName="users">
+        <ng-container *ngFor="let userForm of users.controls; let i = index">
+            <div [formGroup]="userForm">
+                <div>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" formControlName="name" />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" formControlName="email" />
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" formControlName="password" />
+                    </div>
+                    <div>
+                        <label for="isAdmin">Is Admin</label>
+                        <input type="checkbox" id="isAdmin" name="isadmin" formControlName="isAdmin" />
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" formControlName="email" />
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" formControlName="password" />
-            </div>
-            <div>
-                <label for="isAdmin">Is Admin</label>
-                <input type="checkbox" id="isAdmin" name="isadmin" formControlName="isAdmin" />
-            </div> -->
-        </div>
-    </div>
+        </ng-container>
+    </ng-container>
     <button type="button" (click)="addUser()">Add User</button>
     <input type="submit" value="Submit" />
 </form>
+
+<!-- material forms with formArray -->

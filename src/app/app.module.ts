@@ -62,6 +62,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { MypipePipe } from './custome/mypipe.pipe';
 import { MydirectiveDirective } from './custome/mydirective.directive';
 import { FormComponent } from './components/form/form.component';
+import { UserEntryFormComponent } from './components/user-entry-form/user-entry-form.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { FormComponent } from './components/form/form.component';
     PipesComponent,
     MypipePipe,
     MydirectiveDirective,
-    FormComponent
+    FormComponent,
+    UserEntryFormComponent
   ],
   imports: [
     BrowserModule,

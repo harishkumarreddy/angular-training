@@ -98,6 +98,16 @@ EX:
         ex: <form [formGroup]="formGroup"> 
         <input type="text" formControlName="variable"> 
         </form>
+    3. Dynamic Reactive forms
+        ex: <form [formGroup]="formGroup"> 
+        <div formArrayName="formArray">
+            <div *ngFor="let itemForm of formArray.controls; let i=index">
+                <div [formGroup]="itemForm">
+                    <input type="text" formControlName="variable">
+                </div>
+            </div>
+        </div>
+        </form>
 7. Services
 8. Dependency Injection
 9. Http/ API intigration
