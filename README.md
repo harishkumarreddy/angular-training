@@ -46,6 +46,44 @@ EX:
 |-----------custom forms
 ```
 
+# Design Patterns & Principles:
+1. SOLID principles
+    1. Single Responsibility Principle
+        -- A class should have only one reason to change.
+    2. Open Closed Principle
+        -- A class should be open for extension but closed for modification.
+    3. Liskov Substitution Principle
+        -- Derived classes must be substitutable for their base classes.
+    4. Interface Segregation Principle
+        -- Make fine grained interfaces that are client specific.
+    5. Dependency Inversion Principle
+        -- Depend on abstractions. Do not depend on concretions.
+2. Design Patterns
+    1. Singleton
+        -- A class of which only a single instance can exist.
+    2. Factory
+        -- A component responsible solely for the wholesale (not piecewise) creation of objects.
+    3. Observer
+        -- A way of notifying change to a number of classes.
+    4. Decorator
+        -- Adding behaviour to individual objects dynamically.
+    6. Adapter
+        -- Match interfaces of different classes.
+    
+    7. DRY* -> Don't Repeat Yourself
+        -- Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+    8. KISS* -> Keep It Simple Stupid
+        -- Keep things as simple as possible, but no simpler.
+    9. YAGNI* -> You Ain't Gonna Need It
+        -- You aren't going to need it.
+
+    10. TDD* -> Test Driven Development
+        -- Write tests before writing code.
+    11. BDD* -> Behavior Driven Development
+        -- Write tests before writing code.
+    12. DDD* -> Domain Driven Development
+        -- Write tests before writing code.
+
 ## Pre-requisites: (* is required)
 1. Javascript*
 2. HTML*
@@ -109,6 +147,8 @@ EX:
         </div>
         </form>
 7. Services
+    1. Logic seperation
+    2. API intigration
 8. Dependency Injection
 9. Http/ API intigration
 10. Routing

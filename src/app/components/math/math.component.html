@@ -1,0 +1,28 @@
+<div>
+    <label>Enter a number: </label>
+    <!-- <input type="text" [(ngModel)]="inputValue" /> -->
+    <input type="text" (change)="inputOnchange($event)" (keypress)="inputOnchange($event)" />
+    <br />
+    <div *ngIf="showError" [ngStyle]="{
+        'color': 'red',
+        'font-weight': 'bold'
+    }">{{errMsg}}</div>
+    <div>
+        <br />
+        <button  (click)="checkPrime()">Check Prime</button>
+        &nbsp;
+        <button (click)="getFabinacci()">Get N Febi.</button>
+    </div>
+</div>
+<div>
+    <ng-container *ngIf="showPrime">
+        <h1>The number is {{inputValue}} and it is {{isPrime ? 'Prime' : 'Not Prime'}}</h1>
+    </ng-container>
+    <ng-container *ngIf="showFibinacci">
+        <h1>First {{inputValue}} Febinoci numbers: </h1>
+        <!-- {{febiNumbers | json}} -->
+        <ul>
+            <li *ngFor="let febi of febiNumbers; let i = index">{{i+1}} : {{febi}}</li>
+        </ul>
+    </ng-container>
+</div>
