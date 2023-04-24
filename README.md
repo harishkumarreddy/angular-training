@@ -148,7 +148,67 @@ EX:
         </form>
 7. Services
     1. Logic seperation
-    2. API intigration
+    2. API intigration :: API -> Application Programming Interface
+        - SDK -> Software Development Kit
+        - Library -> collection of functions
+        - WEB Services
+            - SOAP -> Simple Object Access Protocol -> XML(Wsdl, Xsd, Xsl): 
+                ex: <property-group>
+                        <property1>value</property1>
+                        <property2>value</property2>
+                        <property3>value</property3>
+                    </property-group>
+
+            - REST -> Representational State Transfer (REST API)-> JSON
+                ex: {
+                        "property1": "value",
+                        "property2": "value",
+                        "property3": "value"
+                    }
+
+    WEB Protocol -> 
+        1. HTTP -> Hyper Text Transfer Protocol
+        2. HTTPS -> Hyper Text Transfer Protocol Secure
+        3. FTP -> File Transfer Protocol
+        4. SFTP -> Secure File Transfer Protocol
+        5. SSH -> Secure Shell
+        6. SMTP -> Simple Mail Transfer Protocol
+        7. POP3 -> Post Office Protocol 3
+        8. IMAP -> Internet Message Access Protocol
+        9. WS -> Web Socket
+        10. WSS -> Web Socket Secure
+
+    Consepts of REST API -> (CRUD)
+        1. Method
+            1. GET -> Read/Retrive data
+                ex: https://api.github.com/users/username
+                    http://myapiserver.com/api/users/2434?name=abc&age=23
+            2. POST -> Create (secuerd)
+                curl example:
+                    curl -X POST -H "Content-Type: application/json" -d '{"name":"xyz","age":23}' http://myapiserver.com/api/users
+            3. PUT -> Update (secuerd)
+                curl example:
+                    curl -X PUT -H "Content-Type: application/json" -d '{"name":"xyz","age":23}' http://myapiserver.com/api/users/2434
+            4. DELETE -> Delete
+                curl example:
+                    curl -X DELETE -H "Content-Type: application/json" http://myapiserver.com/api/users/2434
+            5. PATCH -> Partial Update: Update only specific fields
+                curl example:
+                    curl -X PATCH -H "Content-Type: application/json" -d '{"name":"xyz"}' http://myapiserver.com/api/users/2434
+            6. OPTIONS -> Get options
+                curl example:
+                    curl -X OPTIONS -H "Content-Type: application/json" http://myapiserver.com/api/users/2434
+        2. Headers:
+            1.Request headers
+                1. Content-Type -> application/json, application/xml, application/x-www-form-urlencoded, multipart/form-data
+                2. Accept -> application/json, application/xml, application/x-www-form-urlencoded, multipart/form-data
+                3. Authorization -> Bearer <token>
+            2.Response headers
+                1. Encoding -> gzip, deflate, br
+                2. Cache-Control -> no-cache, no-store, must-revalidate
+        3. Body -> Payload(Request body, Contract JSON), Response body
+
+
 8. Dependency Injection
 9. Http/ API intigration
 10. Routing
