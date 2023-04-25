@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -64,6 +65,7 @@ import { MydirectiveDirective } from './custome/mydirective.directive';
 import { FormComponent } from './components/form/form.component';
 import { UserEntryFormComponent } from './components/user-entry-form/user-entry-form.component';
 import { MathComponent } from './components/math/math.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,8 @@ import { MathComponent } from './components/math/math.component';
     MydirectiveDirective,
     FormComponent,
     UserEntryFormComponent,
-    MathComponent
+    MathComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +136,8 @@ import { MathComponent } from './components/math/math.component';
     PortalModule,
     ScrollingModule,
     DialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

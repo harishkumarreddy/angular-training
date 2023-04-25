@@ -211,6 +211,7 @@ EX:
 
 8. Dependency Injection
 9. Http/ API intigration
+    - AJAX -> Asynchronous Javascript And XML
 10. Routing
 11. RXJS
 12. Testing
