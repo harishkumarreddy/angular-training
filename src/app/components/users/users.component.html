@@ -9,6 +9,7 @@
             <th>Phone</th>
             <th>City</th>
             <th>Company</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,62 @@
             <td>{{user.phone}}</td>
             <td>{{user.address.city}}</td>
             <td>{{user.company.name}}</td>
+            <td>
+                <button (click)="viewUser(user.id)">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <button (click)="editUser(user.id)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="deleteUser(user.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<!-- user details table -->
+<mat-card *ngIf="showuser">
+    <mat-card-header>
+        <mat-card-title>User Details</mat-card-title>
+        <!-- close button -->
+        <button mat-raised-button color="warn" (click)="closeUser()">
+            <mat-icon>close</mat-icon>
+            Close
+        </button>
+    </mat-card-header>
+    <mat-card-content>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{selectedUser.id}}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{selectedUser.name}}</td>
+                </tr>
+                <tr>
+                    <th>User Name</th>
+                    <td>{{selectedUser.username}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{selectedUser.email}}</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>{{selectedUser.phone}}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{selectedUser.address.city}}</td>
+                </tr>
+                <tr>
+                    <th>Company</th>
+                    <td>{{selectedUser.company.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card-content>
