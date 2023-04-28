@@ -1,19 +1,19 @@
 # get linux ubuntu distribution
-FROM ubuntu:latest
+FROM alpine:latest
 USER root
 
 # install nodejs16 and @angular/cli13
-RUN apt-get update && apt-get install -y curl 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - 
-RUN apt-get install -y nodejs
-RUN apt-get install npm -y
-RUN npm install -g @angular/cli@13
+# RUN apt update && apt install -y curl 
+# RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - 
+RUN apt install -y nodejs
+RUN apt install npm -y
+RUN npm install -g @angular/cli@13 -y
 
 # install chrome to run e2e tests
-RUN apt-get install -y wget && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt-get install -y ./google-chrome-stable_current_amd64.deb
+# RUN apt-get install -y wget && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt-get install -y ./google-chrome-stable_current_amd64.deb
 
 # install git
-RUN apt-get install -y git
+RUN apt install -y git
 
 # print the angular version
 RUN ng version

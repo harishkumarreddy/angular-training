@@ -10,6 +10,7 @@ export class UsersComponent implements OnInit {
   users:any = [];
   selectedUser: any = {};
   showuser: boolean = false;
+  showedit: boolean = false;
 
   constructor(
     private userService: UserService
@@ -34,17 +35,41 @@ export class UsersComponent implements OnInit {
 
     this.showuser = true;
   }
-
-  deleteUser(id: number) {
-    console.log(id);
-  }
-
+  
   editUser(id: number) {
-    console.log(id);
+    this.userService.getUser(id).subscribe((data)=>{
+      this.selectedUser = data;
+    });
+
+    this.showedit = true;
+  }
+  
+  deleteUser(id: number) {
+    this.userService.deleteUser(id).subscribe((data)=>{
+      this.userService.getUsers().subscribe((data)=>{
+        this.users = data;
+      });
+    });
   }
 
   closeUser() {
     this.showuser = false;
+  }
+  closeEdit() {
+    this.showedit = false;
+  }
+
+  updateUser() {
+    this.userService.updateUser(this.selectedUser).subscribe((data)=>{
+      this.userService.getUsers().subscribe((data)=>{
+        this.users = data;
+      });
+    });
+    this.showedit = false;
+  }
+
+  onEditSubmit() {
+    this.updateUser();
   }
 
 }

@@ -217,3 +217,10 @@ EX:
 12. Testing
 13. Interfaces
 14. Models
+
+# Advanced Angular
+1. Lazy loading** -> 
+2. stores** -> Redux, NgRx 
+3. SSR -> Server Side Rendering
+4. PWA -> Progressive Web App
+5. MFE -> Micro Front End
