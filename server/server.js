@@ -51,6 +51,11 @@ async function syncDatabase(forse = false) {
 syncDatabase(true);
 const app = express();
 app.use(bodyParser.json());
+// CORS exception
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 const port = 8080;
 

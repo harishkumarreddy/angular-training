@@ -224,3 +224,19 @@ EX:
 3. SSR -> Server Side Rendering
 4. PWA -> Progressive Web App
 5. MFE -> Micro Front End
+
+
+# API Server
+ folder: server
+ staeps:
+    1. open therminal and go to server folder
+    2. run command: npm install
+    3. run command: npm start
+
+ DB: MySQL
+ configrations: server/config.js
+    username: 'root', -> your mysql username. default is root
+    password: '', -> your mysql password. default is empty
+    database: 'test', -> your mysql database name
+    host: '127.0.0.1', -> your mysql host
+    driver: 'mysql' -> kepp it as it is

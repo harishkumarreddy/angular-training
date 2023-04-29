@@ -66,6 +66,8 @@ import { FormComponent } from './components/form/form.component';
 import { UserEntryFormComponent } from './components/user-entry-form/user-entry-form.component';
 import { MathComponent } from './components/math/math.component';
 import { UsersComponent } from './components/users/users.component';
+import { StudentComponent } from './components/student/student.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,9 @@ import { UsersComponent } from './components/users/users.component';
     FormComponent,
     UserEntryFormComponent,
     MathComponent,
-    UsersComponent
+    UsersComponent,
+    StudentComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
