@@ -1,12 +1,14 @@
 # get linux ubuntu distribution
-FROM alpine:latest
+FROM ubuntu:latest
 USER root
 
 # install nodejs16 and @angular/cli13
-# RUN apt update && apt install -y curl 
-# RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - 
+RUN apt update -y && apt install -y curl wget
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - 
 RUN apt install -y nodejs
-RUN apt install npm -y
+# RUN apt install npm -y
+RUN npm config rm proxy
+RUN npm config rm https-proxy
 RUN npm install -g @angular/cli@13 -y
 
 # install chrome to run e2e tests

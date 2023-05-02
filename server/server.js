@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { sequelize, User, Student, Product } = require('./models');
 
 // sync database
@@ -52,10 +53,7 @@ syncDatabase(true);
 const app = express();
 app.use(bodyParser.json());
 // CORS exception
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+app.use(cors());
 
 const port = 8080;
 

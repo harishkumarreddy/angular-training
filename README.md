@@ -207,6 +207,33 @@ EX:
                 1. Encoding -> gzip, deflate, br
                 2. Cache-Control -> no-cache, no-store, must-revalidate
         3. Body -> Payload(Request body, Contract JSON), Response body
+        4. Status code
+            1. 1xx -> Informational
+            2. 2xx -> Success
+                1. 200 -> OK
+                2. 201 -> Created
+                3. 202 -> Accepted
+                4. 204 -> No Content
+            3. 3xx -> Redirection
+                1. 301 -> Moved Permanently
+                2. 302 -> Found
+                3. 304 -> Not Modified
+            4. 4xx -> Client Error
+                1. 400 -> Bad Request
+                2. 401 -> Unauthorized
+                3. 403 -> Forbidden
+                4. 404 -> Not Found
+                5. 405 -> Method Not Allowed
+                6. 406 -> Not Acceptable
+                7. 409 -> Conflict
+                8. 410 -> Gone
+            5. 5xx -> Server Error
+                1. 500 -> Internal Server Error
+                2. 501 -> Not Implemented
+                3. 502 -> Bad Gateway
+                4. 503 -> Service Unavailable
+                5. 504 -> Gateway Timeout
+                6. 505 -> HTTP Version Not Supported
 
 
 8. Dependency Injection
@@ -216,7 +243,9 @@ EX:
 11. RXJS
 12. Testing
 13. Interfaces
-14. Models
+14. Models/Classes
+    1. Data models -> behaves like a data adapter
+    2. Intigration models -> Intigrate with Services
 
 # Advanced Angular
 1. Lazy loading** -> 

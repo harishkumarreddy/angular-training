@@ -1,14 +1,15 @@
-export interface Student {
+export interface IStudent {
+    [x: string]: any;
     id: number | null;
     name: string | null;
     age: number | null;
     contact: string | null;
     email: string | null;
-    address: string | null;
+    address?: string | null;
 }
 
 export interface StudentRaw {
-    data: Student;
+    data: IStudent;
     action: string;
 }
 

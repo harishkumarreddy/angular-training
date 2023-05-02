@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentService } from 'src/app/services/student.service';
 import { PopupComponent } from '../popup/popup.component';
+import { environment } from 'src/app/environments/environment';
+import { StudentModelV2 } from 'src/app/models/student.model';
+import { IStudent } from 'src/app/interfaces/student';
+
 
 @Component({
   selector: 'app-student',
@@ -9,14 +13,15 @@ import { PopupComponent } from '../popup/popup.component';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
+  stuModel: StudentModelV2;
   students: any;
-  currentStudent:any = {
-    id: '',
-    name: '',
-    age: '',
-    contact: '',
-    email: '',
-    address: ''
+  currentStudent:IStudent | any = {
+    id: null,
+    name: null,
+    age: null,
+    contact: null,
+    email: null,
+    address: null
   };
   currentIndex = -1;
   displayedColumns= [
@@ -31,29 +36,38 @@ export class StudentComponent implements OnInit {
   constructor(
     private studentService: StudentService,
     public dialog: MatDialog
-  ) { }
+  ) { 
+    this.stuModel = new StudentModelV2(studentService, this.currentStudent);
+  }
 
   ngOnInit(): void {
+    console.log(environment);
     this.getAll();
   }
 
   getAll() {
-    this.studentService.getAll()
-      .subscribe(
-        data => {
-          this.students = data;
-        },
-        error => {
-          console.log(error);
-        });
+    // this.studentService.getAll()
+    //   .subscribe(
+    //     data => {
+    //       this.students = data;
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     });
+
+    this.stuModel.fetchAllStudents()
+    .then((res: any) => {
+      this.students = res;
+    }).catch((err: any) => {});
+
   }
 
   refreshList() {
     this.getAll();
     this.currentStudent = {
-      id: '',
+      id: null,
       name: '',
-      age: '',
+      age: null,
       contact: '',
       email: '',
       address: ''
@@ -62,6 +76,8 @@ export class StudentComponent implements OnInit {
   }
 
   saveStudent() {
+    // get service status
+
     this.studentService.create(this.currentStudent)
       .subscribe(
         response => {
@@ -75,9 +91,9 @@ export class StudentComponent implements OnInit {
 
   newStudent() {
     this.currentStudent = {
-      id: '',
+      id: null,
       name: '',
-      age: '',
+      age: null,
       contact: '',
       email: '',
       address: ''
@@ -157,9 +173,9 @@ export class StudentComponent implements OnInit {
 
   clearStudent() {
     this.currentStudent = {
-      id: '',
+      id: null,
       name: '',
-      age: '',
+      age: null,
       contact: '',
       email: '',
       address: ''
