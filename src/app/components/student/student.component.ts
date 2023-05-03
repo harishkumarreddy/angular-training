@@ -46,19 +46,19 @@ export class StudentComponent implements OnInit {
   }
 
   getAll() {
-    // this.studentService.getAll()
-    //   .subscribe(
-    //     data => {
-    //       this.students = data;
-    //     },
-    //     error => {
-    //       console.log(error);
-    //     });
+    this.studentService.getAll()
+      .subscribe(
+        data => {
+          this.students = data;
+        },
+        error => {
+          console.log(error);
+        });
 
-    this.stuModel.fetchAllStudents()
-    .then((res: any) => {
-      this.students = res;
-    }).catch((err: any) => {});
+    // this.stuModel.fetchAllStudents()
+    // .then((res: any) => {
+    //   this.students = res;
+    // }).catch((err: any) => {});
 
   }
 
@@ -102,12 +102,14 @@ export class StudentComponent implements OnInit {
   }
 
   getStudent(id: any) {
-    this.studentService.get(id)
+    this.studentService.getByID(id)
       .subscribe(
         data => {
-          this.currentStudent = data;
-          console.log(data);
-          debugger
+          this.currentStudent = data.body;
+          console.log({
+            httpStatus: data.status,
+            httpStatusText: data.statusText,
+          });
           const dialogRef = this.dialog.open(PopupComponent, {
             data:{
               data: this.currentStudent,
@@ -121,7 +123,7 @@ export class StudentComponent implements OnInit {
   }
 
   editStudent(id: any) {
-    this.studentService.get(id)
+    this.studentService.getByID(id)
       .subscribe(
         data => {
           this.currentStudent = data;

@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { Student,StudentRaw  } from 'src/app/interfaces/student';
+import { IStudent,StudentRaw  } from 'src/app/interfaces/student';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({

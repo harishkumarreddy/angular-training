@@ -15,8 +15,8 @@ export class StudentService {
     return this.http.get(this.hopst);
   }
 
-  get(id: any) {
-    return this.http.get(`${this.hopst}/${id}`);
+  getByID(id: any) {
+    return this.http.get(`${this.hopst}/${id}`, {observe: "response" });
   }
 
   create(data: any) {
